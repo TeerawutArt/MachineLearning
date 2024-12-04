@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Table with Bootstrap Grid</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="container my-4">
+      <h2 class="text-center mb-4">สถานที่ตรวจสอบ</h2>
+      <div class="row bg-primary text-white fw-bold py-2">
+        <div class="col-2">ชื่อสถานที่</div>
+        <div class="col-2">รูปภาพ</div>
+        <div class="col-2">วันที่</div>
+        <div class="col-2">เวลา</div>
+        <div class="col-2">สภาพน้ำ</div>
+        <div class="col-2">ตรวจสอบ</div>
+      </div>
+      <!-- Example Row -->
+      <div class="row border-bottom py-2 align-items-center">
+        <div class="col-2">คลองแสนแสบ</div>
+        <div class="col-2">
+          <img
+            src="https://via.placeholder.com/80"
+            alt="สถานที่"
+            class="img-fluid rounded"
+          />
+        </div>
+        <div class="col-2">04-12-2024</div>
+        <div class="col-2">14:30</div>
+        <div class="col-2">ปกติ</div>
+        <div class="col-2">
+          <button class="btn btn-sm btn-primary">ตรวจสอบ</button>
+        </div>
+      </div>
+      <!-- Add more rows here -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
