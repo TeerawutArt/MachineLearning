@@ -1,0 +1,84 @@
+/* Banner Section */
+.banner {
+  background-image: url('./images/water-1.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.lead {
+  text-shadow: 2px 2px #1900ff;
+}
+.banner h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.banner p {
+  font-size: 1.25rem;
+}
+
+/* Information Section */
+.info-section {
+  background-color: #f8f9fa;
+}
+
+.info-section p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
+}
+
+/* Action Section */
+#webcam-container,
+#upload-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#file-preview {
+  max-width: 100%;
+  margin-top: 20px;
+  border: 1px solid #ddd;
+}
+
+#loading-progress {
+  margin-top: 20px;
+  width: 100%;
+  max-width: 400px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Footer Section */
+footer {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 5px;
+  text-align: center;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Add shadow for a sticky effect */
+  z-index: 1000; /* Ensure the footer is on top */
+}
+
+/* Ensure footer stays at the bottom */
+body,
+html {
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.mt-auto {
+  margin-top: auto;
+}
