@@ -1,4 +1,5 @@
 let webcam, labelContainer;
+let saveDB = false;
 async function initCamera() {
   const webcamContainer = document.getElementById('webcam-container');
   webcamContainer.innerHTML = ''; // รีเซ็ตกล้องถ้ามี
@@ -53,11 +54,16 @@ async function predictFromCamera() {
     highestPrediction.probability > minimumPrediction
   ) {
     resultMessage = 'น้ำสะอาด';
+    saveDB = false;
   } else if (
     highestPrediction.className === 'Dirty water' &&
     highestPrediction.probability > minimumPrediction
   ) {
     resultMessage = 'น้ำสกปรก';
+    if (!saveDB) {
+      AddBadWater('แม่น้ำปิง', resultMessage);
+      saveDB = true;
+    }
   } else if (
     highestPrediction.className === 'Not water' &&
     highestPrediction.probability > minimumPrediction

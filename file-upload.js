@@ -54,6 +54,7 @@ async function processFile() {
         highestPrediction.probability > minimumPrediction
       ) {
         resultMessage = 'น้ำสกปรก';
+        AddBadWater('คลองแสนแสบ', resultMessage);
       } else if (
         highestPrediction.className === 'Not water' &&
         highestPrediction.probability > minimumPrediction

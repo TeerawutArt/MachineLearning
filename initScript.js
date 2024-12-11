@@ -10,4 +10,4 @@ async function loadModel() {
   maxPredictions = model.getTotalClasses();
   console.log('Model Loaded');
 }
-loadModel(); // โหลดโมเดลตั้งแต่เริ่มต้น
+loadModel();

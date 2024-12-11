@@ -21,6 +21,9 @@
     <!-- TensorFlow.js -->
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@latest/dist/teachablemachine-image.min.js"></script>
+    <!-- Firebase v8  มันยังไม่เป็น ESM-->
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
   </head>
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">ICON</a>
@@ -31,7 +34,7 @@
           <a class="nav-link active" href="#">Home </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="./alert.html">แจ้งเตือน</a>
+          <a class="nav-link" href="./reportTable.html">รายงาน</a>
         </li>
       </ul>
     </div>
@@ -52,23 +55,19 @@
           <div class="col-12 col-md-8 mx-auto">
             <h2 class="mb-4">About the Project</h2>
             <p>
-              This project aims to provide a simple and effective way to assess
-              the quality of water using artificial intelligence (AI). The goal
-              is to create a tool that can quickly analyze water samples by
-              either webcam or image upload, helping to determine whether the
-              water is clean or contaminated.
+              โปรเจคนี้มีเป้าหมายในการพัฒนาเครื่องมือที่ช่วยประเมินคุณภาพน้ำโดยใช้ปัญญาประดิษฐ์(AI)
+              โดยสามารถวิเคราะห์ตัวอย่างน้ำจากการอัปโหลดภาพหรือผ่านกล้องเว็บแคม
+              เพื่อช่วยในการแจ้งเตือนหากคุณภาพของน้ำเกิดการเน่าเสีย
             </p>
             <p>
-              The initiative is aligned with the United Nations Sustainable
-              Development Goal (SDG) 6, which aims to "ensure availability and
-              sustainable management of water and sanitation for all." By
-              leveraging AI technology, we strive to contribute to better water
-              quality monitoring, increasing awareness about the importance of
-              clean water for communities worldwide.
+              โปรเจคนี้สอดคล้องกับเป้าหมายการพัฒนาที่ยั่งยืนของสหประชาชาติ
+              (SDGs) ที่เกี่ยวกับ "สร้างหลักประกันเรื่องน้ำและการสุขาภิบาล
+              ให้มีการจัดการอย่างยั่งยืนและมีสภาพพร้อมใช้ สำหรับทุกคน "
+              เราหวังว่าการใช้เทคโนโลยี AI
+              จะช่วยในการตรวจสอบคุณภาพน้ำและเพิ่มความตระหนักรู้เกี่ยวกับความสำคัญของน้ำสะอาดสำหรับชุมชนทั่วโลก
             </p>
             <p>
-              You can upload images or open the camera to analyze the water
-              sample.
+              สามารถอัปโหลดภาพหรือลองเปิดกล้องเพื่อวิเคราะห์ตัวอย่างน้ำได้เลย
             </p>
           </div>
         </div>
@@ -77,9 +76,7 @@
 
     <!-- Actions Section -->
     <main class="container my-5">
-      <h3 class="text-center mb-4">
-        Choose your method to analyze water quality
-      </h3>
+      <h3 class="text-center mb-4">เลือกวิธีการตรวจสอบ</h3>
       <div class="row justify-content-center">
         <div class="col-12 col-md-5 mb-3 mb-md-0 text-center">
           <button
@@ -87,7 +84,7 @@
             class="btn btn-primary w-100"
             onclick="startCamera()"
           >
-            Open Camera
+            เปิดกล้อง
           </button>
         </div>
         <div class="col-12 col-md-5 text-center">
@@ -96,7 +93,7 @@
             class="btn btn-secondary w-100"
             onclick="uploadFile()"
           >
-            Upload File
+            อัปโหลดรูป
           </button>
         </div>
       </div>
@@ -118,10 +115,8 @@
         />
 
         <p id="upload-detail" class="text-muted mt-2 text-center">
-          Choose an image file for analysis
+          กรุณาเลือกรูปภาพที่ต้องการตรวจสอบ
         </p>
-
-        <!-- Image Preview -->
         <canvas
           id="file-preview"
           class="d-none col-12"
@@ -134,7 +129,7 @@
           class="btn btn-danger d-none mt-3"
           onclick="clearUploadedImage()"
         >
-          Clear Image
+          ล้างรูป
         </button>
       </div>
       <div id="label-container" class="mt-4 text-center"></div>
@@ -145,11 +140,12 @@
       class="text-center py-2 bg-light mt-auto"
       style="position: sticky; bottom: 0; width: 100%"
     >
-      <p>&copy; 2024 Water Quality Checker. All rights reserved.</p>
+      <p>&copy; 2024 Water Quality Checker. 66230092 Teerawut kabkaew</p>
     </footer>
 
     <!-- Scripts -->
-    <script src="script.js" defer></script>
+    <script src="initScript.js" defer></script>
+    <script src="firebase.js" defer></script>
     <script src="camera.js" defer></script>
     <script src="file-upload.js" defer></script>
   </body>
