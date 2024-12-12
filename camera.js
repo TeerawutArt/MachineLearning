@@ -74,7 +74,11 @@ async function predictFromCamera() {
   }
 
   const resultDiv = document.createElement('div');
+  const predictDiv = document.createElement('div');
   resultDiv.innerText = `ผลการตรวจสอบ: ${resultMessage}`;
+  predictDiv.innerText =
+    prediction[i].className + ': ' + prediction[i].probability.toFixed(2);
+  labelContainer.appendChild(predictDiv);
   labelContainer.appendChild(resultDiv); // เพิ่มผลลัพธ์ลงใน div
 }
 
